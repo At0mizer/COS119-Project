@@ -2,10 +2,28 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
+#include <string>
+
+//bool MainMenu();
 
 int main()
 {
+
+    /*
+    * MainMenu
+    *
+    * Will be a switch
+    * First case of the switch will be the new game / play option
+    *       - Upon selecting the play option, it will call a function in the GameMode class that starts the gameplay.
+    *       - This will 
+    * Second case will be the load function, 
+    *       - It will show the save file of the player shown by the character's name (File will be .bin) 
+    * Third case will exit the program
+    *       - Just exits the program while saving the player data
+    */
     std::cout << "Hello World!\n";
+    
+    //while (MainMenu());
 
     std::cout << "Starting Timer..." << std::endl;
 
@@ -51,3 +69,28 @@ int main()
 // Merge -> Close -> Verify
 
 // Plan -> Update -> Work in dev -> Commit -> Test -> Merge -> Close the PR
+// 
+// 
+// Plan
+// Track
+// Build
+// Test
+// Commit 
+// Merge 
+// Push
+
+//bool MainMenu()
+//{
+//    //bool bIsLooping;
+//
+//    std::string userChoice;
+//    int convChoice = std::stoi(userChoice);
+//
+//    //switch (convChoice)
+//    //{
+//    //case 1:
+//
+//    //}
+//
+//    //return bIsLooping;
+//}

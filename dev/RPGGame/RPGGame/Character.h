@@ -2,25 +2,28 @@
 #include <iostream>
 #include <string>
 
+struct CharacterStats
+{
+	std::string Name;
+	int health;
+};
+
 class Character
 {
 public:
 
-	Character(std::string _name, int charHealth)
-		: name(_name), charHealth(charHealth)
-	{}
+	CharacterStats* charStats;
 
-	int Health() const { return charHealth; }
-	void Health(int _charHealth ) { charHealth = _charHealth; }
+	Character(std::string _name, int _charHealth)
+	{
+		charStats->Name = _name;
+		charStats->health = _charHealth;
+	}
 
-	void SetName(const std::string& _name) { name = _name;  }
+
 
 protected:
-	std::string name;
-	int charHealth;
 
-private:
-public:
 
 
 };
