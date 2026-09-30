@@ -20,8 +20,15 @@ public:
 	* 
 	* Question: Who should manage who?
 	* Instead of having each class worry about deleting itself after being used
-	* The class notifies the engine that it has completed its tasks and is ready for deletion by using Destroy().
-	* This flags the class instance with the destruction flag
+	*		- Enemy should worry about enemy things
+	*		- Player should worry about player things
+	*		- NPC should worry about NPC things
+	*		- None of these should have to worry about deleting themselves
+	* 
+	* The class notifies the engine that it has completed its tasks and 
+	* is ready for deletion by using Destroy().
+	* 
+	* Destroy() flags the object instance with the destruction flag
 	* 
 	* The engine then removes the object from the heap and frees up that memory address
 	* Then it purges the pointer from the engine's pointer registry to eliminate any dangling pointers
