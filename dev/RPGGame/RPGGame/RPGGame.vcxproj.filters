@@ -30,6 +30,12 @@
     <ClCompile Include="GameEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AActor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h">
@@ -49,6 +55,12 @@
     </ClInclude>
     <ClInclude Include="Screens.h">
       <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="GObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AActor.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

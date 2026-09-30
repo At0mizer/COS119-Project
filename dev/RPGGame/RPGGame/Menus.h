@@ -8,7 +8,7 @@ namespace Menus
 {
 
     // Main Menu 
-    static bool MainMenu()
+    static int MainMenu()
     {
 
         bool bIsLooping = true;
@@ -55,8 +55,9 @@ namespace Menus
                 Helper::ClearConsole();
                 break;
             }
-        }
 
-        return bIsLooping;
+
+            return convChoice;
+        }
     }
 }
