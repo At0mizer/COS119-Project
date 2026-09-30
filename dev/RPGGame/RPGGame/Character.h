@@ -1,6 +1,6 @@
 #pragma once
-#include <iostream>
-#include <string>
+#include "AActor.h"
+
 
 struct CharacterStats
 {
@@ -8,19 +8,22 @@ struct CharacterStats
 	int health;
 };
 
-class Character
+class Character : public AActor
 {
 public:
 
-	CharacterStats* charStats;
+	CharacterStats charStats;
 
 	Character(std::string _name, int _charHealth)
 	{
-		charStats->Name = _name;
-		charStats->health = _charHealth;
+		charStats.Name = _name;
+		charStats.health = _charHealth;
 	}
 
-
+	void PrintStats()
+	{
+		Helper::Print(charStats.Name + std::to_string(charStats.health), 1);
+	}
 
 protected:
 

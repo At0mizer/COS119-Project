@@ -26,7 +26,6 @@ void GameEngine::Run()
 
 		if (MenuChoice == 1)
 		{
-			
 		}
 
 	}

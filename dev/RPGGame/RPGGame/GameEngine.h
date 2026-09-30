@@ -15,9 +15,24 @@ public:
 
 	void Run();
 
-	// Spawns/Registers a new actor into the engine
-	void RegisterActor(AActor* NewActor);
+	/*
+	* The Manager vs. The Managed conundrum
+	* 
+	* Question: Who should manage who?
+	* Instead of having each class worry about deleting itself after being used
+	* The class notifies the engine that it has completed its tasks and is ready for deletion by using Destroy().
+	* This flags the class instance with the destruction flag
+	* 
+	* The engine then removes the object from the heap and frees up that memory address
+	* Then it purges the pointer from the engine's pointer registry to eliminate any dangling pointers
+	* (Dangling pointers are pointers that refer to a memory location that has been freed up)
+	* 
+	* This is a basic, simple built-in garbage collection system
+	* 
+	*/
 
+	// Registers a new actor into the engine
+	void RegisterActor(AActor* NewActor);
 	void ProcessDeferredDestruction();
 
 private:
