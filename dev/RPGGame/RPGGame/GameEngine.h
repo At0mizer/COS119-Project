@@ -27,7 +27,8 @@ public:
 	* Then it purges the pointer from the engine's pointer registry to eliminate any dangling pointers
 	* (Dangling pointers are pointers that refer to a memory location that has been freed up)
 	* 
-	* This is a basic, simple built-in garbage collection system
+	* This is a simple deferred-destruction object management system or a simple garbage collection system
+	* Deferred meaning it will delete this object when it is safe, instead of immediately
 	* 
 	*/
 
