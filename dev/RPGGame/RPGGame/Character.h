@@ -20,9 +20,10 @@ public:
 		charStats.health = _charHealth;
 	}
 
-	void PrintStats()
+	void BeginPlay() override;
+	void PrintStats(Helper::Color color) const
 	{
-		Helper::Print(charStats.Name + std::to_string(charStats.health), 1);
+		Helper::Print("Name: " + charStats.Name + "| Health: " + std::to_string(charStats.health), color, 1);
 	}
 
 protected:

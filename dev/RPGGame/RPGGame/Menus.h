@@ -4,6 +4,12 @@
 #include "Helper.h"
 #include "Screens.h"
 
+/*
+* Namespace menus is a UI Helper layer. 
+* It keeps the code separate from the engine logic
+* 
+*/
+
 namespace Menus
 {
 
@@ -17,12 +23,12 @@ namespace Menus
         {
             Screens::DisplayWelcomeMessage();
 
-            Helper::Print("\x1b[4mPlease Select an Option...\x1b[0m", 1);
+            Helper::Print("\x1b[4mPlease Select an Option...\x1b[0m", Helper::Color::Red, 1);
             Helper::Print("1. New Game\n"
                 "2. Load Game\n"
                 "3. Credits\n"
                 "4. Quit\n"
-                ">> ", 0);
+                ">> ", Helper::Color::Red, 0);
 
             std::string userChoice;
             getline(std::cin, userChoice);
@@ -50,7 +56,7 @@ namespace Menus
                 break;
 
             default:
-                Helper::Print("ERROR: Invalid Choice...", 1);
+                Helper::Print("ERROR: Invalid Choice...", Helper::Color::Red, 1);
                 Helper::Continue();
                 Helper::ClearConsole();
                 break;

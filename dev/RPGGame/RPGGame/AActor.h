@@ -11,9 +11,7 @@ public:
 
 
 	virtual ~AActor() 
-	{
-		std::cout << "[MEMORY FREED] Destructor called for: " << Name << "\n";
-	}
+	{}
 
 	virtual void BeginPlay() override;
 

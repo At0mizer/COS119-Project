@@ -8,9 +8,12 @@ class GObject
 {
 public:
 	GObject();
+
 	virtual ~GObject() = default;
 
-	virtual void BeginPlay() {};
+	virtual void BeginPlay() {
+
+	};
 
 };
 
