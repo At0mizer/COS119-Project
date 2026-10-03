@@ -4,8 +4,8 @@
 
 struct CharacterStats
 {
-	std::string Name;
-	int health;
+	std::string Name = "John Cena";
+	int health = 0;
 };
 
 class Character : public AActor

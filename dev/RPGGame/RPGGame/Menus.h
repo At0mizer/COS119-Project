@@ -51,6 +51,7 @@ namespace Menus
                 break;
             case 4:
                 Helper::ClearConsole();
+                Screens::GoodbyeMessage();
                 bIsLooping = false;
                 
                 break;

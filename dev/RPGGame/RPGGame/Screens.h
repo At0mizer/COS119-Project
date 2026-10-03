@@ -27,4 +27,11 @@ namespace Screens
         Helper::Continue();
         Helper::ClearConsole();
     }
+
+    static void GoodbyeMessage()
+    {
+        Helper::Print("\t\t\t\t\t======--------------------------======", Helper::Color::Red, 1);
+        Helper::Print("\t\t\t\t\t|==|            GoodBye :)        |==|", Helper::Color::Red, 1);
+        Helper::Print("\t\t\t\t\t======--------------------------======", Helper::Color::Red, 1);
+    }
 }

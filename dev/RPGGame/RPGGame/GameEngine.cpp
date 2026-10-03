@@ -19,7 +19,12 @@ GameEngine::~GameEngine()
 void GameEngine::Run()
 {
 	Helper::MemoryLeakDector();
-	MainMenu();
+
+	while(bIsRunning)
+	{
+		MainMenu();
+	}
+
 }
 
 void GameEngine::RegisterActor(AActor* NewActor)
@@ -52,6 +57,7 @@ void GameEngine::MainMenu()
 	if (MenuChoice == 4)
 	{
 		bIsRunning = false; // User chose Quit; breaks of the application
+
 	}
 
 	if (MenuChoice == 1)

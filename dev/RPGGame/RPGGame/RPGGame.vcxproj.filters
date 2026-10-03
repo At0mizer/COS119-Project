@@ -28,6 +28,9 @@
     <Filter Include="Source Files\GObject\AActor">
       <UniqueIdentifier>{eaf03fdc-fdc5-48bb-bdd4-23ace5545e0b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Misc\Dialogue">
+      <UniqueIdentifier>{af75a29f-49cd-47c5-bf15-118b8d71ae13}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RPGGame.cpp">
@@ -50,6 +53,9 @@
     </ClCompile>
     <ClCompile Include="GameSession.cpp">
       <Filter>Session</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +85,12 @@
     </ClInclude>
     <ClInclude Include="GameSession.h">
       <Filter>Session</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialogue.h">
+      <Filter>Misc\Dialogue</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
