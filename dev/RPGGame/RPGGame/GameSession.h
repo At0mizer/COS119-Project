@@ -3,7 +3,6 @@
 
 class GameEngine;
 
-
 class GameSession
 {
 public:

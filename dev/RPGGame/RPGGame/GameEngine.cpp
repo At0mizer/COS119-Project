@@ -18,9 +18,6 @@ GameEngine::~GameEngine()
 
 void GameEngine::Run()
 {
-	Helper::MemoryLeakDector();
-
-
 	GameManager manager(*this);
 
 	manager.MainMenu();

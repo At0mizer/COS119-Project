@@ -151,6 +151,7 @@
   <ItemGroup>
     <ClInclude Include="AActor.h" />
     <ClInclude Include="Character.h" />
+    <ClInclude Include="CharacterCreator.h" />
     <ClInclude Include="Dialogue.h" />
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="GameManager.h" />

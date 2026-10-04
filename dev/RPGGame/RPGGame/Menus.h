@@ -23,12 +23,11 @@ namespace Menus
         {
             Screens::DisplayWelcomeMessage();
 
-            Helper::Print("\x1b[4mPlease Select an Option...\x1b[0m", Helper::Color::Red, 1);
-            Helper::Print("1. New Game\n"
-                "2. Load Game\n"
-                "3. Credits\n"
-                "4. Quit\n"
-                ">> ", Helper::Color::Red, 0);
+            Helper::Print("\t\t\t\t\t\t   - 1. New Game -", Helper::Color::Red, 1);
+            Helper::Print("\t\t\t\t\t\t   - 2. Load Game -", Helper::Color::Red, 1);
+            Helper::Print("\t\t\t\t\t\t    - 3. Credits -", Helper::Color::Red, 1);
+            Helper::Print("\t\t\t\t\t\t     - 4. Quit -", Helper::Color::Red, 1);
+            Helper::Print("\t\t\t\t\t\t\t>> ", Helper::Color::Red, 0);
 
             std::string userChoice;
             getline(std::cin, userChoice);

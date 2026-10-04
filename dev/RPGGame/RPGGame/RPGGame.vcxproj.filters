@@ -92,5 +92,8 @@
     <ClInclude Include="Dialogue.h">
       <Filter>Misc\Dialogue</Filter>
     </ClInclude>
+    <ClInclude Include="CharacterCreator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

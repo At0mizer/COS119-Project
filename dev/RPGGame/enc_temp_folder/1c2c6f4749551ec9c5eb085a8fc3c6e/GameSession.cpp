@@ -55,7 +55,7 @@ void GameSession::CreateCharacter()
 
 	// Calls the CreateCharacter method from the CharacterCreator namespace
 	CharacterCreator::CreateCharacter(*player);
- }
+}
 
 // Will become its own Namepsace
 void GameSession::SaveGame()

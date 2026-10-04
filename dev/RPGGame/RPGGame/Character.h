@@ -26,6 +26,9 @@ public:
 		Helper::Print("Name: " + charStats.Name + "| Health: " + std::to_string(charStats.health), color, 1);
 	}
 
+	std::string Name() const { return charStats.Name; }
+	void Name(std::string _name) { charStats.Name = _name; }
+
 protected:
 
 
