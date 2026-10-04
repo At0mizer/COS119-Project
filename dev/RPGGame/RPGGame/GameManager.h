@@ -1,11 +1,23 @@
 #pragma once
 
+class GameEngine;
+
 class GameManager
 {
 public:
-	void Run();
-	void Intro();
+	GameManager(GameEngine& _engine)
+		: Engine(_engine)
+	{}
 	
+	void MainMenu();
+
+	void LoadGame();
+	
+
 private:
+	GameEngine& Engine;
+
+
 };
 
+ 

@@ -3,16 +3,29 @@
 
 class GameEngine;
 
+
 class GameSession
 {
 public:
 	GameSession(GameEngine& _engine)
-		:  Engine(_engine)
+		: Engine(_engine)
 	{}
 
-	void SessionRun();
+	void StartSession();
+	void SafeZone();
+	void BattleSequence();
+
+	void CreateCharacter();
+
+	bool GetIsNewGame() const { return bIsNewGame; }
+	void SetIsNewGame() { bIsNewGame = true; }
+
+	void SaveGame();
 
 private:
 	GameEngine& Engine;
+
+	bool bIsNewGame = false;
+	bool bIsLooping = true;
 };
 

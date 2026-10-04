@@ -1,12 +1,40 @@
 #include "GameManager.h"
-#include "Dialogue.h"
+#include "GameEngine.h"
+#include "GameSession.h"
+#include "Menus.h"
 
-void GameManager::Run()
+void GameManager::MainMenu()
 {
-	Intro();
+	GameSession Session(Engine);
+
+	while (Engine.IsRunning())
+	{
+		int MenuChoice = Menus::MainMenu();
+
+		if (MenuChoice == 4)
+		{
+			Engine.RequesetQuit();
+
+		}
+
+		if (MenuChoice == 1)
+		{
+			Session.SetIsNewGame();
+			Session.StartSession();
+		}
+
+		if (MenuChoice == 2)
+		{
+			LoadGame();
+			Session.StartSession();
+		}
+	}
+	
 }
 
-void GameManager::Intro()
+void GameManager::LoadGame()
 {
-	Dialogue::StartDialogue();
+	// This will eventually load player save data
 }
+
+

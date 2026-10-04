@@ -1,5 +1,5 @@
 #include "GameEngine.h"
-#include "GameSession.h"
+#include "GameManager.h"
 #include "AActor.h"
 #include "Helper.h"
 #include <utility>
@@ -20,11 +20,10 @@ void GameEngine::Run()
 {
 	Helper::MemoryLeakDector();
 
-	while(bIsRunning)
-	{
-		MainMenu();
-	}
 
+	GameManager manager(*this);
+
+	manager.MainMenu();
 }
 
 void GameEngine::RegisterActor(AActor* NewActor)
@@ -46,25 +45,6 @@ void GameEngine::ProcessDeferredDestruction()
 			++it;
 		}		
 	}
-}
-
-void GameEngine::MainMenu()
-{
-	GameSession session(*this);
-
-	int MenuChoice = Menus::MainMenu();
-
-	if (MenuChoice == 4)
-	{
-		bIsRunning = false; // User chose Quit; breaks of the application
-
-	}
-
-	if (MenuChoice == 1)
-	{
-		session.SessionRun();
-	}
-
 }
 
 
