@@ -27,14 +27,6 @@ void GameSession::StartSession()
 
 	Dialogue::StartDialogue();
 
-	//while (bIsLooping)
-	//{
-	//	SafeZone();
-	//	BattleSequence();
-	//	Engine.ProcessDeferredDestruction();
-	//}
-
-
 }
 
 void GameSession::SafeZone()

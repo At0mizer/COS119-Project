@@ -67,19 +67,16 @@ namespace Helper
 	}
 
 	template <typename T>
-	void TypeOut(const T& message, int delayMs, int delayLine, Helper::Color color)
+	void TypeOut(const T& message, int delayMs, int delayLine, Helper::Color color, int BlankLines)
 	{
-
-		auto time = std::chrono::milliseconds(10);
-
 		for (char c : message)
 		{
 			Helper::Print(c, color, 0);
 			std::this_thread::sleep_for(std::chrono::milliseconds(delayMs));
 		}
 
-		std::this_thread::sleep_for(std::chrono::milliseconds(delayLine));
-		Helper::PrintBlankLines(1);
+		std::this_thread::sleep_for(std::chrono::seconds(delayLine));
+		Helper::PrintBlankLines(BlankLines);
 	}
 
 	static int RandomNumberGenerator(int min, int max)

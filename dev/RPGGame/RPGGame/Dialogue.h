@@ -26,7 +26,7 @@ namespace CharacterCreator
 	inline constexpr  std::array<std::string_view, 2> Lines1 =
 	{
 		"[BAP] Hello! Welcome to the Build-A-Player!",
-		"[BAP] I'm gonna be walking through the process of creating a new character today!",
+		"[BAP] I will walk you through the process of creating a new character!",
 	};
 
 }
@@ -37,7 +37,7 @@ namespace Dialogue
 	{
 		for (const auto& line : CharacterCreator::Lines1)
 		{
-			Helper::TypeOut(line, 30, 100, Helper::Color::Cyan);
+			Helper::TypeOut(line, 30, 1, Helper::Color::Cyan, 1);
 		}
 	}
 
@@ -46,7 +46,7 @@ namespace Dialogue
 
 		for (const auto& line : IntroLines::Lines)
 		{
-			Helper::TypeOut(line, 30, 100, Helper::Color::White);
+			Helper::TypeOut(line, 30, 1, Helper::Color::White, 1);
 		}
 
 	}
