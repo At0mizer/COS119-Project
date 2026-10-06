@@ -31,6 +31,9 @@
     <Filter Include="Misc\Dialogue">
       <UniqueIdentifier>{af75a29f-49cd-47c5-bf15-118b8d71ae13}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Misc\Utilities">
+      <UniqueIdentifier>{0b11c77f-22d9-495c-bd87-0069f5f85ee8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RPGGame.cpp">
@@ -68,9 +71,6 @@
     <ClInclude Include="Menus.h">
       <Filter>Misc</Filter>
     </ClInclude>
-    <ClInclude Include="Helper.h">
-      <Filter>Misc</Filter>
-    </ClInclude>
     <ClInclude Include="Screens.h">
       <Filter>Misc</Filter>
     </ClInclude>
@@ -91,6 +91,15 @@
     </ClInclude>
     <ClInclude Include="Dialogue.h">
       <Filter>Misc\Dialogue</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterCreator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper.h">
+      <Filter>Misc\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Misc\Utilities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

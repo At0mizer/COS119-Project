@@ -3,6 +3,7 @@
 #include <string>
 #include "Helper.h"
 #include "Screens.h"
+#include "Input.h"
 
 /*
 * Namespace menus is a UI Helper layer. 
@@ -22,20 +23,11 @@ namespace Menus
         while (bIsLooping)
         {
             Screens::DisplayWelcomeMessage();
+            Screens::MenuOptions();
 
-            Helper::Print("\x1b[4mPlease Select an Option...\x1b[0m", Helper::Color::Red, 1);
-            Helper::Print("1. New Game\n"
-                "2. Load Game\n"
-                "3. Credits\n"
-                "4. Quit\n"
-                ">> ", Helper::Color::Red, 0);
-
-            std::string userChoice;
-            getline(std::cin, userChoice);
-
-            int convChoice = std::stoi(userChoice);
-            
-            switch (convChoice)
+            int MenuChoice = Input::GetInput("\t\t\t\t\t\t\t >> ", 1, 4);
+   
+            switch (MenuChoice)
             {
             case 1:
                 Helper::ClearConsole();
@@ -64,7 +56,7 @@ namespace Menus
             }
 
 
-            return convChoice;
+            return MenuChoice;
         }
     }
 }

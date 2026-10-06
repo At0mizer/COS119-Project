@@ -151,12 +151,14 @@
   <ItemGroup>
     <ClInclude Include="AActor.h" />
     <ClInclude Include="Character.h" />
+    <ClInclude Include="CharacterCreator.h" />
     <ClInclude Include="Dialogue.h" />
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameSession.h" />
     <ClInclude Include="GObject.h" />
     <ClInclude Include="Helper.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="Menus.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Screens.h" />

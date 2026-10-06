@@ -4,45 +4,50 @@
 #include <thread>
 #include <chrono>
 #include <vector>
+#include <array>
+#include <string_view>
 #include "helper.h"
+#include "Player.h"
 
 namespace IntroLines
 {
-	inline const std::vector<std::string> Lines =
+	inline constexpr std::array<std::string_view, 5> Lines =
 	{
 		"[Narrator] You wake up in a patch of grass on the side of the road.",
 		"[Narrator] You have no memory of how you got here or even where here is.",
 		"[Narrator] The first thing you do is look around to take in your surroundings.",
-		"[Narrator] You don't see much of worth while, until you see smoke rising in the distanc",
-		"[You] Huh? Wait... I see smoke! It could be a sign of civilization!",
+		"[Narrator] You don't see much of worth while, until you see smoke rising in the distance.",
+		"[You] Huh? Wait... I see smoke! It could be a sign of civilization!"
 	};
+}
+
+namespace CharacterCreator
+{
+	inline constexpr  std::array<std::string_view, 2> Lines1 =
+	{
+		"[BAP] Hello! Welcome to the Build-A-Player!",
+		"[BAP] I will walk you through the process of creating a new character!",
+	};
+
 }
 
 namespace Dialogue
 {
-	template <typename T>
-	void TypeOut(const T& message, int delayMs)
+	void CharacterCreateDialogue()
 	{
-
-		auto time = std::chrono::milliseconds(10);
-
-		for (char c : message)
+		for (const auto& line : CharacterCreator::Lines1)
 		{
-			Helper::Print(c, Helper::Color::White, 0);
-			std::this_thread::sleep_for(std::chrono::milliseconds(delayMs));
+			Helper::TypeOut(line, 30, 1, Helper::Color::Cyan, 1);
 		}
-
-		std::cin.ignore();
 	}
 
 	void Intro()
 	{
 
-		for (const std::string& line : IntroLines::Lines)
+		for (const auto& line : IntroLines::Lines)
 		{
-			Dialogue::TypeOut(line, 30);
+			Helper::TypeOut(line, 30, 1, Helper::Color::White, 1);
 		}
-
 
 	}
 

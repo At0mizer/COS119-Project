@@ -5,7 +5,8 @@
 #include <iostream>
 #include <string>
 #include <random>
-
+#include <thread>
+#include <chrono>
 
 namespace Helper
 {
@@ -65,6 +66,29 @@ namespace Helper
 		PrintBlankLines(numLines);
 	}
 
+	static std::string ShowError(std::string message)
+	{
+		return message;
+	}
+
+	template <typename T>
+	static void TypeOut(const T& message, int delayMs, int delayLine, Helper::Color color, int BlankLines)
+	{
+		for (char c : message)
+		{
+			Helper::Print(c, color, 0);
+			std::this_thread::sleep_for(std::chrono::milliseconds(delayMs));
+		}
+
+		std::this_thread::sleep_for(std::chrono::seconds(delayLine));
+		Helper::PrintBlankLines(BlankLines);
+	}
+
+	static void ClearLastLine()
+	{
+		Print("\x1b[1A\x1b[2K\r", Helper::Color::White, 0);
+	}
+
 	static int RandomNumberGenerator(int min, int max)
 	{
 		static std::mt19937 gen(std::random_device{}());
@@ -83,9 +107,8 @@ namespace Helper
 	{
 		// Turn on automatic leak - checking at program exit, using the debug allocator
 		_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-		//_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-		//_CrtSetBreakAlloc(-1);
-		//_CrtDumpMemoryLeaks();
+		_CrtSetBreakAlloc(-1);
+		_CrtDumpMemoryLeaks();
 	}
 
 	static void ClearConsole()
@@ -96,5 +119,4 @@ namespace Helper
 		system("clear");
 #endif
 	}
-
 }

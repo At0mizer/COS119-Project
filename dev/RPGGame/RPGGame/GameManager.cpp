@@ -7,26 +7,27 @@ void GameManager::MainMenu()
 {
 	GameSession Session(Engine);
 
+
 	while (Engine.IsRunning())
 	{
 		int MenuChoice = Menus::MainMenu();
 
 		if (MenuChoice == 4)
 		{
-			Engine.RequesetQuit();
+			Engine.RequesetQuit(); // Calls a function inside of the engine that flips a bool to false
 
 		}
 
 		if (MenuChoice == 1)
 		{
-			Session.SetIsNewGame();
-			Session.StartSession();
+			Session.SetIsNewGame(); // Calls a function inside the session that flips a bool to true
+			Session.StartSession(); // Starts the session
 		}
 
 		if (MenuChoice == 2)
 		{
-			LoadGame();
-			Session.StartSession();
+			LoadGame(); // Loads data from a previous save
+			Session.StartSession(); // Starts the session
 		}
 	}
 	
