@@ -66,8 +66,13 @@ namespace Helper
 		PrintBlankLines(numLines);
 	}
 
+	static std::string ShowError(std::string message)
+	{
+		return message;
+	}
+
 	template <typename T>
-	void TypeOut(const T& message, int delayMs, int delayLine, Helper::Color color, int BlankLines)
+	static void TypeOut(const T& message, int delayMs, int delayLine, Helper::Color color, int BlankLines)
 	{
 		for (char c : message)
 		{
@@ -77,6 +82,11 @@ namespace Helper
 
 		std::this_thread::sleep_for(std::chrono::seconds(delayLine));
 		Helper::PrintBlankLines(BlankLines);
+	}
+
+	static void ClearLastLine()
+	{
+		Print("\x1b[1A\x1b[2K\r", Helper::Color::White, 0);
 	}
 
 	static int RandomNumberGenerator(int min, int max)

@@ -23,19 +23,11 @@ namespace Menus
         while (bIsLooping)
         {
             Screens::DisplayWelcomeMessage();
+            Screens::MenuOptions();
 
-            Helper::Print("\t\t\t\t\t\t   - 1. New Game -", Helper::Color::Red, 1);
-            Helper::Print("\t\t\t\t\t\t   - 2. Load Game -", Helper::Color::Red, 1);
-            Helper::Print("\t\t\t\t\t\t    - 3. Credits -", Helper::Color::Red, 1);
-            Helper::Print("\t\t\t\t\t\t     - 4. Quit -", Helper::Color::Red, 1);
-            Helper::Print("\t\t\t\t\t\t\t>> ", Helper::Color::Red, 0);
-
-            std::string userChoice;
-            getline(std::cin, userChoice);
-
-            int convChoice = std::stoi(userChoice);
+            int MenuChoice = Input::GetInput("\t\t\t\t\t\t\t >> ", 1, 4);
    
-            switch (convChoice)
+            switch (MenuChoice)
             {
             case 1:
                 Helper::ClearConsole();
@@ -64,7 +56,7 @@ namespace Menus
             }
 
 
-            return convChoice;
+            return MenuChoice;
         }
     }
 }
