@@ -34,4 +34,13 @@ namespace Screens
         Helper::Print("\t\t\t\t\t|==|            GoodBye :)        |==|", Helper::Color::Red, 1);
         Helper::Print("\t\t\t\t\t======--------------------------======", Helper::Color::Red, 1);
     }
+
+    static void MenuOptions()
+    {
+        Helper::Print("\t\t\t\t\t\t   - 1. New Game -", Helper::Color::Red, 1);
+        Helper::Print("\t\t\t\t\t\t   - 2. Load Game -", Helper::Color::Red, 1);
+        Helper::Print("\t\t\t\t\t\t    - 3. Credits -", Helper::Color::Red, 1);
+        Helper::Print("\t\t\t\t\t\t     - 4. Quit -", Helper::Color::Red, 1);
+        Helper::Print("\t\t\t\t\t\t\t>> ", Helper::Color::Red, 0);
+    }
 }

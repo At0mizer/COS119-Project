@@ -158,6 +158,7 @@
     <ClInclude Include="GameSession.h" />
     <ClInclude Include="GObject.h" />
     <ClInclude Include="Helper.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="Menus.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Screens.h" />

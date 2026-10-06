@@ -2,7 +2,6 @@
 #include "GameManager.h"
 #include "AActor.h"
 #include "Helper.h"
-#include <utility>
 
 GameEngine::~GameEngine()
 {
@@ -12,8 +11,6 @@ GameEngine::~GameEngine()
 		delete actor;
 	}
 	ActorRegistry.clear();
-
-
 }
 
 void GameEngine::Run()

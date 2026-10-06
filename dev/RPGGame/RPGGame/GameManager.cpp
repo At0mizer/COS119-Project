@@ -7,6 +7,7 @@ void GameManager::MainMenu()
 {
 	GameSession Session(Engine);
 
+
 	while (Engine.IsRunning())
 	{
 		int MenuChoice = Menus::MainMenu();

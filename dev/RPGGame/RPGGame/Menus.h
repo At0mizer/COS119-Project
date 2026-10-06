@@ -3,6 +3,7 @@
 #include <string>
 #include "Helper.h"
 #include "Screens.h"
+#include "Input.h"
 
 /*
 * Namespace menus is a UI Helper layer. 
@@ -33,7 +34,7 @@ namespace Menus
             getline(std::cin, userChoice);
 
             int convChoice = std::stoi(userChoice);
-            
+   
             switch (convChoice)
             {
             case 1:

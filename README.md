@@ -44,8 +44,7 @@ Each week I will summarize my milestone activity and progress by writing a stand
 
 ### Week 1
 
-Replace this paragraph with your stand up for this week. Use the prompts above to summarize your most recent milestone activity and work.
-
+An update for my end-of-the-week check-in. All this week, I continued on tiding up my engine class, created the GameManager and the GameSession classes, along with bug fixing and issues that I had. Some of the issues/challenges that I found myself running into was placement of methods. For instance, initially I placed my main menu logic inside the engine, but that was the wrong idea since I wanted the engine to mainly worry about memory management and math-related things. So I did a lot of reworking on those classes. But solving these issues, along with independent research, has taught me where things should go when programming in general. I also taught me the importance of how different classes interact with each other. My next step for this week, will not be creating the player and enemy classes and implementing the battle logic and then fleshing out all the kinks and bugs. This will be completed before the next milestone!
 ### Week 2
 
 My next stand up will go here...
