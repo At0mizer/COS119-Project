@@ -1,15 +1,38 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <thread>
+#include <chrono>
 #include "Helper.h"
-#include "Menus.h"
+
+using namespace std::chrono_literals;
 
 // Forward declaration so the GameEngine knows that AActor exists
 class AActor;
 
+// Forward declares GameEngine so the pointer type is known,
+// then declares the global GEngine pointer (defined in GameEngine.cpp) so any file can access it
+class GameEngine; 
+extern GameEngine* GEngine;
+
+enum class Color
+{
+	Red,
+	Blue,
+	Green,
+	Yellow,
+	Brown,
+	Magenta,
+	Cyan,
+	Purple,
+	White
+};
+
 class GameEngine
 {
 public:
+
+
 	GameEngine() = default;
 	// Destructor to ensure no memory leaks if the engine closes
 	~GameEngine();
@@ -48,14 +71,71 @@ public:
 	bool IsRunning() const { return bIsRunning; }
 	void RequesetQuit() { bIsRunning = false; }
 
+	void PrintBlankLines(int numOfBlankLines);
+	template <typename T> void Print(const T& message, Color color, int numOfBlankLines);
+	template <typename T> void TypeOut(const T& message, std::chrono::milliseconds delayMs, std::chrono::seconds delayLine, Color color, int BlankLines);
+	void ErrorMessage(std::string message);
+	void ClearLastLine();
+
+	void ClearConsole();
+	void Continue();
+
+
 private:
 	// The master list of every actor that is currently alive
 	std::vector<AActor*> ActorRegistry;
 
 	bool bIsRunning = true;
-
-protected:
-	
-
-
 };
+
+template<typename T>
+inline void GameEngine::Print(const T& message, Color color, int numOfBlankLines)
+{
+	// 1. Sets the console color based on the enum
+	switch (color)
+	{
+	case Color::Red:     
+		std::cout << "\033[31m"; 
+		break;
+	case Color::Green:   
+		std::cout << "\033[32m"; 
+		break;
+	case Color::Yellow:  
+		std::cout << "\033[33m"; 
+		break;
+	case Color::Blue:    
+		std::cout << "\033[34m"; 
+		break;
+	case Color::Magenta: 
+		std::cout << "\033[35m"; 
+		break;
+	case Color::Cyan:    
+		std::cout << "\033[36m"; 
+		break;
+	case Color::White:
+		std::cout << "\033[0m";
+		break;
+	default:             
+		std::cout << "\033[0m";  
+		break; // Default white/reset
+	}
+
+	std::cout << message; // Prints the actual message that was inputed
+
+	std::cout << "\033[0m"; // Resets the color back to the normal (white) so future prints won't have the same color
+
+	PrintBlankLines(numOfBlankLines); // Prints the requested blank lines
+}
+
+template<typename T>
+inline void GameEngine::TypeOut(const T& message, std::chrono::milliseconds delayMs, std::chrono::seconds delayLine, Color color, int BlankLines)
+{
+	for (char c : message)
+	{
+		Print(c, color, 0);
+		std::this_thread::sleep_for((delayMs));
+	}
+
+	std::this_thread::sleep_for((delayLine));
+	PrintBlankLines(BlankLines);
+}

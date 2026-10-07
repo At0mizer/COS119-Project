@@ -3,19 +3,19 @@
 #include "Dialogue.h"
 #include "Helper.h"
 
-
+using namespace std::chrono_literals;
 
 namespace CharacterCreator
 {
-
 	void CreateName(Player& player)
 	{
-		Helper::TypeOut("[BAP] Let's begin with your name.", 30, 1, Helper::Color::Cyan, 1);
-		Helper::Print("Input Name Here: ", Helper::Color::White, 1);
-		Helper::Print(">> ", Helper::Color::White, 0);
+		GEngine->TypeOut("[BAP] Let's begin with your name.", 30ms, 1s, Color::Cyan, 2);
+		GEngine->Print("Input Name Here: ", Color::White,  1);
+		GEngine->Print(">> ", Color::White, 0);
 
 		std::string inputName;
 		getline(std::cin, inputName);
+		GEngine->PrintBlankLines(1);
 
 		if (!inputName.empty())
 		{
@@ -23,19 +23,18 @@ namespace CharacterCreator
 			{
 				if (isdigit(inputName[i]))
 				{
-					Helper::ShowError("ERROR: Your name should not contain any numbers!");
-					//Helper::Print(Helper::ShowError("ERROR: Your name should not contain any numbers!"), Helper::Color::Red, 1);
+					GEngine->ErrorMessage("ERROR: Your name should not contain any numbers!");
 
-					std::this_thread::sleep_for(std::chrono::seconds(2)); // Pauses the 
-					Helper::ClearConsole();
+					std::this_thread::sleep_for(2s);
+					GEngine->ClearConsole();
 
 					CreateName(player);
 					return;
 				}
 			}
 
-			Helper::TypeOut("[BAP] So your name is " + inputName + "? (Y/N) ", 30, 1, Helper::Color::Cyan, 1);
-			Helper::Print(" >> ", Helper::Color::White, 0);
+			GEngine->TypeOut("[BAP] So your name is " + inputName + "? (Y/N) ", 30ms, 1s, Color::Cyan, 1);
+			GEngine->Print(" >> ", Color::White, 0);
 
 			char userChoice;
 			std::cin >> userChoice;
@@ -44,26 +43,30 @@ namespace CharacterCreator
 			{
 				std::cin.ignore();
 				player.Name(inputName); // Sets the inputted name to the character's name located in the struct CharacterStats
+				GEngine->ClearConsole();
 			}
 			else if (userChoice == 'N' or userChoice == 'n')
 			{
 				std::cin.ignore();
+				GEngine->ClearConsole();
 				CreateName(player);// Recursively restarts name creation if the input is 'N'
+
 			}
 			else
 			{
 				std::cin.ignore();
-				Helper::TypeOut("ERROR: Invalid Input... ", 30, 2, Helper::Color::Cyan, 1);
+				GEngine->ErrorMessage("ERROR: Invalid Input! Must be 'Y' or 'N'! ");
 
-				std::this_thread::sleep_for(std::chrono::seconds(1)); // Pauses the 
-				Helper::ClearConsole();
+				GEngine->ClearConsole();
 
 				CreateName(player); // Recursively restarts name creation if the input is not 'Y' or 'N'
 			}
 		}
 		else
 		{
-			Helper::Print("Player name is empty!", Helper::Color::Red, 1);
+			GEngine->ErrorMessage("ERROR: Player name is empty!");
+			GEngine->ClearConsole();
+
 			CreateName(player);
 		}
 

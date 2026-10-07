@@ -3,6 +3,9 @@
 #include "AActor.h"
 #include "Helper.h"
 
+GameEngine* GEngine = nullptr; // Sets the Global GameEngine pointer to nullptr
+
+// Destructor
 GameEngine::~GameEngine()
 {
 	bIsRunning = false;
@@ -41,7 +44,37 @@ void GameEngine::ProcessDeferredDestruction()
 	}
 }
 
+void GameEngine::PrintBlankLines(int numOfBlankLines)
+{
+	for (int i = 0; i < numOfBlankLines; i++)
+	{ 
+		std::cout << std::endl;
+	}
 
+}
 
+void GameEngine::ErrorMessage(std::string message)
+{
+	TypeOut(message, 1ms, 1s, Color::Red, 1);
+}
+
+void GameEngine::ClearLastLine()
+{
+	Print("\x1b[1A\x1b[2K\r", Color::White, 0);
+}
+
+void GameEngine::ClearConsole()
+{
+#ifdef _WIN32
+	system("cls"); // If the system is a windowOS then it calls this function
+#else
+	system("clear"); // If the system is not a windowOS (i.e. MacOS) then it calls this function
+#endif
+}
+
+void GameEngine::Continue()
+{
+	system("pause");
+}
 
 
