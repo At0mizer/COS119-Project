@@ -34,6 +34,12 @@
     <Filter Include="Misc\Utilities">
       <UniqueIdentifier>{0b11c77f-22d9-495c-bd87-0069f5f85ee8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\GObject">
+      <UniqueIdentifier>{515206ed-d511-4e8a-a06b-334cf7f65baf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GObject\AActor">
+      <UniqueIdentifier>{db6e03bb-241d-4c53-8075-97f00cd4a906}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RPGGame.cpp">
@@ -62,23 +68,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Character.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Menus.h">
       <Filter>Misc</Filter>
     </ClInclude>
     <ClInclude Include="Screens.h">
       <Filter>Misc</Filter>
-    </ClInclude>
-    <ClInclude Include="GObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AActor.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameEngine.h">
       <Filter>Engine</Filter>
@@ -100,6 +94,21 @@
     </ClInclude>
     <ClInclude Include="Input.h">
       <Filter>Misc\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="GObject.h">
+      <Filter>Header Files\GObject</Filter>
+    </ClInclude>
+    <ClInclude Include="AActor.h">
+      <Filter>Header Files\GObject\AActor</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Header Files\GObject\AActor</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\GObject\AActor</Filter>
+    </ClInclude>
+    <ClInclude Include="UMath.h">
+      <Filter>Engine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

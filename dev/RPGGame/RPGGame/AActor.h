@@ -4,16 +4,18 @@
 class AActor : public GObject
 {
 public:
-	AActor() {};
-	AActor(std::string InName) {
-		Name = InName;
-	}
+	AActor() 
+	{
+		BeginPlay();
+	};
+
 
 
 	virtual ~AActor() 
 	{}
 
-	virtual void BeginPlay() override;
+	virtual void BeginPlay();
+	virtual void EndPlay();
 
 	virtual void Destroy(); // Deletes the object pointer then assigns it to nullptr
 

@@ -4,6 +4,7 @@
 #include "Helper.h"
 
 
+
 namespace CharacterCreator
 {
 
@@ -22,7 +23,8 @@ namespace CharacterCreator
 			{
 				if (isdigit(inputName[i]))
 				{
-					Helper::Print(Helper::ShowError("ERROR: Your name should not contain any numbers!"), Helper::Color::Red, 1);
+					Helper::ShowError("ERROR: Your name should not contain any numbers!");
+					//Helper::Print(Helper::ShowError("ERROR: Your name should not contain any numbers!"), Helper::Color::Red, 1);
 
 					std::this_thread::sleep_for(std::chrono::seconds(2)); // Pauses the 
 					Helper::ClearConsole();

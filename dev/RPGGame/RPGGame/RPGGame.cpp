@@ -4,6 +4,7 @@
 #include <iostream>
 #include <thread>
 #include <string>
+#include "UMath.h"
 #include "GameEngine.h"
 #include "Helper.h"
 #include "Player.h"

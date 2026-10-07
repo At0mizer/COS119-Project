@@ -4,6 +4,7 @@
 #include <crtdbg.h>
 #include <iostream>
 #include <string>
+#include <string_view>
 #include <random>
 #include <thread>
 #include <chrono>
@@ -21,6 +22,11 @@ namespace Helper
 		Purple
 	};
 
+
+	// ======================================
+	//									PRINTING										   
+	//										LOGIC											  
+	// ======================================
 	static void PrintBlankLines(int numLines)
 	{
 		for (int i = 0; i < numLines; i++)
@@ -66,11 +72,6 @@ namespace Helper
 		PrintBlankLines(numLines);
 	}
 
-	static std::string ShowError(std::string message)
-	{
-		return message;
-	}
-
 	template <typename T>
 	static void TypeOut(const T& message, int delayMs, int delayLine, Helper::Color color, int BlankLines)
 	{
@@ -84,10 +85,21 @@ namespace Helper
 		Helper::PrintBlankLines(BlankLines);
 	}
 
+	static void ShowError(std::string message)
+	{
+		TypeOut(message, 1, 1, Helper::Color::Red, 1);
+	}
+
 	static void ClearLastLine()
 	{
 		Print("\x1b[1A\x1b[2K\r", Helper::Color::White, 0);
 	}
+
+// ======================================
+//								END OF PRINTING										   
+//										LOGIC											  
+// ======================================
+
 
 	static int RandomNumberGenerator(int min, int max)
 	{

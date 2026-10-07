@@ -4,14 +4,9 @@ class Player : public Character
 {
 public:
 	Player() = default;
-	Player(std::string _name, int _health, int _expPoint) : Character(_name, _health), expPoints(_expPoint) {};
+	Player(std::string _name, int _health, int _expPoints) : Character(_name, _health, _expPoints){};
 
 	void BeginPlay() override;
-
-
-
-private:
-	int expPoints;
 
 };
 

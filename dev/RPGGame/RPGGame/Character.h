@@ -5,7 +5,8 @@
 struct CharacterStats
 {
 	std::string Name = "John Cena";
-	int health = 0;
+	int Health = 0;
+	int Exp = 0;
 };
 
 class Character : public AActor
@@ -14,16 +15,17 @@ public:
 
 	CharacterStats charStats;
 
-	Character(std::string _name, int _charHealth)
+	Character(std::string _name, int _charHealth, int _exp)
 	{
 		charStats.Name = _name;
-		charStats.health = _charHealth;
+		charStats.Health = _charHealth;
+		charStats.Exp = _exp;
 	}
 
 	void BeginPlay() override;
 	void PrintStats(Helper::Color color) const
 	{
-		Helper::Print("Name: " + charStats.Name + "| Health: " + std::to_string(charStats.health), color, 1);
+		Helper::Print("Name: " + charStats.Name + "| Health: " + std::to_string(charStats.Health), color, 1);
 	}
 
 	std::string Name() const { return charStats.Name; }
