@@ -9,7 +9,7 @@ namespace UMath
 	{
 		if (min > max)
 		{
-			throw std::invalid_argument("Clamp: min is greater than max");
+			throw std::invalid_argument("Clamp: min is greater than max"); // Throws an exception if the min is greater than the max
 		}
 
 		if (value < min) return min;
@@ -21,7 +21,7 @@ namespace UMath
 	{
 		if (min > max)
 		{
-			throw std::invalid_argument("RandRange: min is greater than max");
+			throw std::invalid_argument("RandRange: min is greater than max"); // Throws an exception if the min is greater than the max
 		}
 
 		static std::mt19937 gen(std::random_device{}());
@@ -33,7 +33,7 @@ namespace UMath
 	{
 		if (min > max)
 		{
-			throw std::invalid_argument("FRandRange: min is greater than max");
+			throw std::invalid_argument("FRandRange: min is greater than max"); // Throws an exception if the min is greater than the max
 		}
 		static std::mt19937 gen(std::random_device{}());
 		std::uniform_real_distribution<double> distrib(min, max);

@@ -152,6 +152,7 @@
     <ClInclude Include="AActor.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="CharacterCreator.h" />
+    <ClInclude Include="CharacterTypes.h" />
     <ClInclude Include="Dialogue.h" />
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="GameManager.h" />
@@ -162,6 +163,7 @@
     <ClInclude Include="Menus.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Screens.h" />
+    <ClInclude Include="Spells.h" />
     <ClInclude Include="UMath.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

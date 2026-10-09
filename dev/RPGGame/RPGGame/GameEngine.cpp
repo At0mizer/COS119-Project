@@ -36,7 +36,7 @@ void GameEngine::ProcessDeferredDestruction()
 			// This frees up the memory then vaporizes the pointer out of existence
 			delete* it;
 			it = ActorRegistry.erase(it);
-			Helper::Print("Actor was destroyed", Helper::Color::Red, 1);
+			Print("Actor was destroyed", Color::Red, 1);
 		}
 		else {
 			++it;

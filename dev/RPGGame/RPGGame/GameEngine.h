@@ -11,7 +11,7 @@ using namespace std::chrono_literals;
 class AActor;
 
 // Forward declares GameEngine so the pointer type is known,
-// then declares the global GEngine pointer (defined in GameEngine.cpp) so any file can access it
+// then declares the global GEngine pointer (defined in GameEngine.cpp) so any class in the program can access it
 class GameEngine; 
 extern GameEngine* GEngine;
 

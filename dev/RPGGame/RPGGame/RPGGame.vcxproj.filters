@@ -40,14 +40,23 @@
     <Filter Include="Header Files\GObject\AActor">
       <UniqueIdentifier>{db6e03bb-241d-4c53-8075-97f00cd4a906}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\UEngine">
+    <Filter Include="Misc\UI">
+      <UniqueIdentifier>{392a96fb-38eb-4448-af3f-e4fc068c1c97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager">
+      <UniqueIdentifier>{e048c132-581c-44f8-925c-5946bf4efba8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Engine Utils">
       <UniqueIdentifier>{37379f36-d412-4dfe-9ba8-8a54ece03585}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Main">
+      <UniqueIdentifier>{73ced23d-8720-4a69-a40d-04c15af5660c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Structs">
+      <UniqueIdentifier>{ec22e8e3-cf6d-4c8a-aa3a-f4ae87db93f6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="RPGGame.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GameEngine.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
@@ -67,30 +76,21 @@
       <Filter>Session</Filter>
     </ClCompile>
     <ClCompile Include="GameManager.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="RPGGame.cpp">
+      <Filter>Source Files\Main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Menus.h">
-      <Filter>Misc</Filter>
-    </ClInclude>
-    <ClInclude Include="Screens.h">
-      <Filter>Misc</Filter>
-    </ClInclude>
     <ClInclude Include="GameEngine.h">
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="GameSession.h">
       <Filter>Session</Filter>
     </ClInclude>
-    <ClInclude Include="GameManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Dialogue.h">
       <Filter>Misc\Dialogue</Filter>
-    </ClInclude>
-    <ClInclude Include="CharacterCreator.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Helper.h">
       <Filter>Misc\Utilities</Filter>
@@ -111,7 +111,25 @@
       <Filter>Header Files\GObject\AActor</Filter>
     </ClInclude>
     <ClInclude Include="UMath.h">
-      <Filter>Engine\UEngine</Filter>
+      <Filter>Engine\Engine Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Menus.h">
+      <Filter>Misc\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Screens.h">
+      <Filter>Misc\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterTypes.h">
+      <Filter>Header Files\Structs</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterCreator.h">
+      <Filter>Misc\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Spells.h">
+      <Filter>Header Files\Structs</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
