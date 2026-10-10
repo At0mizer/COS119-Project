@@ -5,7 +5,7 @@ class Player : public Character
 {
 public:
 	Player() = default;
-	Player(std::string _name, std::string _classname, int _health, int _stamina, int _expPoints) : Character(_name, _classname, _health, _stamina, _expPoints){};
+	Player(std::string _name, std::string _classname, int _health, int _armorClass, int _stamina, int _expPoints) : Character(_name, _classname, _armorClass, _health, _stamina, _expPoints){};
 
 	void BeginPlay() override;
 

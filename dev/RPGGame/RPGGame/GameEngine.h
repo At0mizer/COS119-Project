@@ -23,9 +23,11 @@ enum class Color
 	Yellow,
 	Brown,
 	Magenta,
+	BMagenta,
 	Cyan,
 	Purple,
-	White
+	White,
+	Gray
 };
 
 class GameEngine
@@ -109,11 +111,17 @@ inline void GameEngine::Print(const T& message, Color color, int numOfBlankLines
 	case Color::Magenta: 
 		std::cout << "\033[35m"; 
 		break;
+	case Color::BMagenta:
+		std::cout << "\033[95m";
+		break;
 	case Color::Cyan:    
 		std::cout << "\033[36m"; 
 		break;
 	case Color::White:
 		std::cout << "\033[0m";
+		break;
+	case Color::Gray:
+		std::cout << "\033[90m";
 		break;
 	default:             
 		std::cout << "\033[0m";  
