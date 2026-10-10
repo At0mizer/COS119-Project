@@ -42,7 +42,7 @@ void GameSession::BattleSequence()
 
 void GameSession::CreateCharacter()
 {
-	Player* player = new Player("", 0, 0); // Creates an new empty player
+	Player* player = new Player("", "", 0, 0, 0); // Creates an new empty player
 	Engine.RegisterActor(player); // Registers the actor to the vector so it will be added to the destruction list
 
 	// Calls the CreateCharacter method from the CharacterCreator namespace

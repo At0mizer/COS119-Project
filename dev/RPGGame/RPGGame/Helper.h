@@ -120,7 +120,6 @@ namespace Helper
 		// Turn on automatic leak - checking at program exit, using the debug allocator
 		_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 		_CrtSetBreakAlloc(-1);
-		_CrtDumpMemoryLeaks();
 	}
 
 	static void ClearConsole()
