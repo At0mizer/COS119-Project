@@ -18,15 +18,13 @@ GameEngine::~GameEngine()
 
 void GameEngine::Run()
 {
+	bIsRunning = true;
+
 	GameManager manager(*this);
 
 	manager.MainMenu();
 }
 
-void GameEngine::RegisterActor(AActor* NewActor)
-{
-	ActorRegistry.push_back(NewActor);
-}
 
 void GameEngine::ProcessDeferredDestruction()
 {
@@ -42,6 +40,11 @@ void GameEngine::ProcessDeferredDestruction()
 			++it;
 		}		
 	}
+}
+
+void GameEngine::RegisterActor(AActor* actor)
+{
+	ActorRegistry.push_back(actor);
 }
 
 void GameEngine::PrintBlankLines(int numOfBlankLines)

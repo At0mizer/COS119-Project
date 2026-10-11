@@ -1,13 +1,19 @@
 #pragma once
+#include <vector>
 #include "Character.h"
+#include "Abilties.h"
+
+struct CharacterAbilities
+{
+	std::vector< CharacterAbility> abilities;
+};
 
 class Player : public Character
 {
 public:
-	Player() = default;
-	Player(std::string _name, std::string _classname, int _health, int _armorClass, int _stamina, int _expPoints) : Character(_name, _classname, _armorClass, _health, _stamina, _expPoints){};
+	CharacterAbilities charAbilities;
 
-	void BeginPlay() override;
+	Player() {};
 
 };
 

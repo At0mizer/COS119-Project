@@ -1,5 +1,8 @@
 #pragma once
 #include "AActor.h"
+#include <iostream>
+#include <string>
+#include <vector>
 
 struct CharacterStats
 {
@@ -17,6 +20,8 @@ public:
 
 	CharacterStats charStats;
 
+	Character() = default;
+
 	Character(std::string _name, std::string _classname, int _health, int _armorClass, int _stamina, int _exp)
 	{
 		charStats.Name = _name;
@@ -27,9 +32,17 @@ public:
 		charStats.Exp = _exp;
 	}
 
-	void PrintStats(Helper::Color color) const
+	void TakeDamage(int _dmgAmt)
 	{
-		Helper::Print("Name: " + charStats.Name + "| Health: " + std::to_string(charStats.Health), color, 1);
+		int reduction = static_cast<int>(charStats.ArmorClass / 0.00125);
+		int finalDMG = std::max(0, _dmgAmt - reduction);
+		charStats.Health -= finalDMG;
+	}
+
+	void PrintStats() const
+	{
+		GEngine->Print("Name: " + charStats.Name + "| Health: " + std::to_string(charStats.Health), Color::Green, 1);
+
 	}
 
 	std::string Name() const { return charStats.Name; }

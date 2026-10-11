@@ -144,7 +144,6 @@
     <ClCompile Include="GameEngine.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameSession.cpp" />
-    <ClCompile Include="GObject.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RPGGame.cpp" />
   </ItemGroup>
@@ -157,13 +156,12 @@
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameSession.h" />
-    <ClInclude Include="GObject.h" />
     <ClInclude Include="Helper.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Menus.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Screens.h" />
-    <ClInclude Include="Spells.h" />
+    <ClInclude Include="Abilties.h" />
     <ClInclude Include="UMath.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

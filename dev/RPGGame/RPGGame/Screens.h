@@ -1,23 +1,34 @@
 #pragma once
 #include <iomanip>
 #include <string>
+#include <chrono>
+#include <windows.h>   // cursor control
+#include <conio.h>     // _kbhit / _getch
+#include <thread>
 #include "GameEngine.h"
 
 namespace Screens
 {
+    inline const std::vector<std::string> BannerLines =
+    {
+        "##==================================##",
+        "||   #--------------------------#   ||",
+        "||   |    THE FALLEN KINGDOM    |   ||",
+        "||   #--------------------------#   ||",
+        "|| <::::::::::[]=o  o=[]::::::::::> ||",
+        "||       ~ A Text Based RPG ~       ||",
+        "##==================================##",
+    };
+
+
     inline void DisplayWelcomeMessage()
     {
-        GEngine->Print("\t\t\t\t\t##==================================##", Color::Red, 1);
-        GEngine->Print("\t\t\t\t\t||   #--------------------------#   ||", Color::Red, 1);
-        GEngine->Print("\t\t\t\t\t||   |    THE FALLEN KINGDOM    |   ||", Color::Red, 1);
-        GEngine->Print("\t\t\t\t\t||   #--------------------------#   ||", Color::Red, 1);
-        GEngine->Print("\t\t\t\t\t|| <::::::::::[]=o  o=[]::::::::::> ||", Color::Red, 1);
-        GEngine->Print("\t\t\t\t\t||       ~ A Text Based RPG ~       ||", Color::Red, 1);
-        GEngine->Print("\t\t\t\t\t##==================================##", Color::Red, 1);
-
-        GEngine->PrintBlankLines(1);
-
+        for (const std::string& line : BannerLines)
+        {
+            GEngine->Print("\t\t\t\t\t" + line, Color::Red, 1);
+        }
     }
+
 
     inline void DisplayCredits()
     {

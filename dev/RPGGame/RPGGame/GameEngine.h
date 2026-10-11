@@ -3,6 +3,7 @@
 #include <vector>
 #include <thread>
 #include <chrono>
+#include <memory>
 #include "Helper.h"
 
 using namespace std::chrono_literals;
@@ -68,7 +69,7 @@ public:
 	void ProcessDeferredDestruction();
 
 	// Registers a new actor into the engine
-	void RegisterActor(AActor* Actor);
+	void RegisterActor(AActor* actor);
 
 	bool IsRunning() const { return bIsRunning; }
 	void RequesetQuit() { bIsRunning = false; }
@@ -87,7 +88,7 @@ private:
 	// The master list of every actor that is currently alive
 	std::vector<AActor*> ActorRegistry;
 
-	bool bIsRunning = true;
+	bool bIsRunning;
 };
 
 template<typename T>

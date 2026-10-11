@@ -1,13 +1,5 @@
-#define _CRTDBG_MAP_ALLOC
-#include <cstdlib>
-#include <crtdbg.h>
-#include <iostream>
-#include <thread>
-#include <string>
-#include "UMath.h"
 #include "GameEngine.h"
 #include "Helper.h"
-#include "Player.h"
 
 
 int main()

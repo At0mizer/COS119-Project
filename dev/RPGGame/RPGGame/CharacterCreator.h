@@ -15,8 +15,9 @@ namespace CharacterCreator
 	{
 		player.charStats.ClassName = charClass.Name;
 		player.charStats.Health = charClass.Health;
+		player.charStats.ArmorClass = charClass.ArmorClass;
 		player.charStats.Stamina = charClass.Stamina;
-
+		player.charAbilities.abilities = charClass.charAbilties;
 	}
 
 	void PrintStats(const CharacterTypes& charClass)
@@ -28,12 +29,30 @@ namespace CharacterCreator
 		GEngine->Print(titlePad + charClass.Name, Color::BMagenta, 1);
 		GEngine->Print(border, Color::BMagenta, 2);
 
+		GEngine->Print("    \033[1mDesc: \033[0m" + charClass.Desc, Color::White, 2);
+
 		GEngine->Print("    \033[1mHP      : \033[22m" + std::to_string(charClass.Health), Color::Green, 1);
 		GEngine->Print("    \033[1mAC      : \033[22m" + std::to_string(charClass.ArmorClass), Color::Green, 1);
 		GEngine->Print("    \033[1mStamina : \033[22m" + std::to_string(charClass.Stamina), Color::Green, 2);
 
-		GEngine->Print("    \033[1mDesc: \033[0m" + charClass.Desc, Color::White, 2);
+		GEngine->Print("    \033[1mAbilties: \033[22m", Color::Green, 0);
 
+		for (int i = 0; i < charClass.charAbilties.size(); i++)
+		{
+			const CharacterAbility& ability = charClass.charAbilties[i];
+
+			const std::string Effect =
+				ability.Damage > 0 ? "Damage " + std::to_string(ability.Damage) :
+				ability.Health > 0 ? "Heals " + std::to_string(ability.Health) :
+				ability.Armor > 0 ? "Armor +" + std::to_string(ability.Armor) :
+				"No effect";
+
+			GEngine->Print(ability.Name + ": " + Effect, Color::Green, 0);
+			GEngine->Print("\n\t\t\033[3m" + ability.Desc + "\033[0m", Color::White, 1);
+			GEngine->Print("\t      ", Color::White, 0);
+		}
+
+		GEngine->PrintBlankLines(1);
 		GEngine->Print(border, Color::BMagenta, 2);
 	}
 
@@ -123,12 +142,12 @@ namespace CharacterCreator
 		else
 		{
 			GEngine->PrintBlankLines(1);
-			GEngine->TypeOut("[BAP] A Soldier! Nothing beats a good sword and a steady arm.", 30ms, 1s, Color::Green, 1);
-			GEngine->TypeOut("[BAP] Solid choice!", 30ms, 1s, Color::Green, 2);
+			GEngine->TypeOut("[BAP] A Soldier! Nothing beats a good sword and a steady arm.", 30ms, 1s, Color::Cyan, 1);
+			GEngine->TypeOut("[BAP] Solid choice!", 30ms, 1s, Color::Cyan, 2);
 
 			PrintStats(Soldier);
 
-			GEngine->TypeOut("[BAP] Are you ready to enlist? (Y/N)", 30ms, 0s, Color::Green, 1);
+			GEngine->TypeOut("[BAP] Are you ready to enlist? (Y/N)", 30ms, 0s, Color::Cyan, 1);
 			GEngine->Print(">> ", Color::White, 0);
 
 			char userChoice;
@@ -158,6 +177,7 @@ namespace CharacterCreator
 		}
 	}
 
+	// Checks if the name is valid and doesn't 
 	void IsNameValid(std::string inputName, Player& player)
 	{
 		if (!inputName.empty())
