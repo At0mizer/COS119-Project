@@ -145,6 +145,8 @@
     <ClCompile Include="GameEngine.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameSession.cpp" />
+    <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RPGGame.cpp" />
   </ItemGroup>
@@ -160,6 +162,8 @@
     <ClInclude Include="GameSession.h" />
     <ClInclude Include="Helper.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="Inventory.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="Menus.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Screens.h" />
