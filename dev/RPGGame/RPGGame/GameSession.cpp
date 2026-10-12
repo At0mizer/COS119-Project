@@ -3,6 +3,7 @@
 #include "GameEngine.h"
 #include "CharacterCreator.h"
 #include "Player.h"
+#include "Goblin.h"
 #include "Dialogue.h"
 
 
@@ -26,7 +27,7 @@ void GameSession::StartSession()
 	}
 
 	Dialogue::StartDialogue();
-
+	BattleSequence();
 }
 
 void GameSession::SafeZone()
@@ -36,6 +37,7 @@ void GameSession::SafeZone()
 
 void GameSession::BattleSequence()
 {
+	Goblin* goblin = new Goblin();
 
 }
 
