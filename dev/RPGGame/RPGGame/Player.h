@@ -15,5 +15,7 @@ public:
 
 	Player() {};
 
+	void PrintStats() const override;
+
 };
 

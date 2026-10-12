@@ -56,6 +56,11 @@ namespace CharacterCreator
 		GEngine->Print(border, Color::BMagenta, 2);
 	}
 
+
+	// ##===================##
+	//			  CREATE NAME
+	// ##===================##
+
 	void CreateName(Player& player)
 	{
 		GEngine->ClearConsole();
@@ -67,6 +72,8 @@ namespace CharacterCreator
 		GEngine->TypeOut("[BAP] Every legend needs a name. What's yours?", 30ms, 1s, Color::Cyan, 2);
 		GEngine->Print(">> ", Color::White, 0);
 
+		Input::FlushInput();
+
 		std::string inputName;
 		getline(std::cin, inputName);
 		GEngine->PrintBlankLines(1);
@@ -74,6 +81,10 @@ namespace CharacterCreator
 		IsNameValid(inputName, player);
 
 	}
+
+	// ##===================##
+	//			  SELECT CLASS
+	// ##===================##
 
 	void SelectClass(Player& player)
 	{
@@ -95,6 +106,8 @@ namespace CharacterCreator
 			"      Stamina: " + std::to_string(Soldier.Stamina),
 			10ms, 0s, Color::Green, 2);
 
+		Input::FlushInput();
+
 		int ClassSelection = Input::GetInput(">> ", 1, 2);
 
 
@@ -111,6 +124,8 @@ namespace CharacterCreator
 
 			GEngine->TypeOut("[BAP] Ready to sign on the dotted line? (Y/N)", 30ms, 0s, Color::Cyan, 1);
 			GEngine->Print(">> ", Color::White, 0);
+
+			Input::FlushInput();
 
 			char userChoice;
 			std::cin >> userChoice;
@@ -196,23 +211,27 @@ namespace CharacterCreator
 				}
 			}
 
-			GEngine->TypeOut("Are you sure this is correct (Y/N): " + inputName, 30ms, 1s, Color::White, 1);
+			GEngine->TypeOut("[BAP] So your name is " + inputName + "? (Y/N)", 30ms, 1s, Color::Cyan, 1);
 			GEngine->Print(" >> ", Color::White, 0);
+
+			Input::FlushInput();
 
 			char userChoice;
 			std::cin >> userChoice;
 
+			GEngine->PrintBlankLines(1);
+
 			if (userChoice == 'Y' or userChoice == 'y')
 			{
 				std::cin.ignore();
-				GEngine->TypeOut("[BAP] So your name is " + inputName + "?", 30ms, 1s, Color::Cyan, 1);
-				GEngine->TypeOut("[BAP] What a fitting name for a legend!", 30ms, 1s, Color::Cyan, 1);
+
+				GEngine->TypeOut("[BAP] Ah, " + inputName + "! What a fitting name for a legend!", 30ms, 1s, Color::Cyan, 1);
 				player.Name(inputName); // Sets the inputted name to the character's name located in the struct CharacterStats
 			}
 			else if (userChoice == 'N' or userChoice == 'n')
 			{
 				std::cin.ignore();
-				GEngine->ClearConsole();
+
 				CreateName(player);// Recursively restarts name creation if the input is 'N'
 
 			}
@@ -235,14 +254,24 @@ namespace CharacterCreator
 		}
 	}
 
+	void ShowStats(Player& player)
+	{
+		GEngine->ClearConsole();
+		player.PrintStats();
+
+		system("pause");
+
+	}
+
 	void CreateCharacter(Player& player)
 	{
 		Dialogue::CharacterCreateDialogue();
 		CreateName(player);
 		SelectClass(player);
+		ShowStats(player);
+
+		GEngine->ClearConsole();
 	}
-
-
 
 };
 

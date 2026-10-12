@@ -5,7 +5,7 @@
 namespace UMath
 {
 	template <typename T>
-	inline T Clamp(T value, T min, T max)
+	inline T Clamp(T value, T min, T max) 
 	{
 		if (min > max)
 		{

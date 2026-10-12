@@ -6,6 +6,7 @@
 #include <conio.h>     // _kbhit / _getch
 #include <thread>
 #include "GameEngine.h"
+#include "Player.h"
 
 namespace Screens
 {
@@ -58,4 +59,5 @@ namespace Screens
         GEngine->Print("\t\t\t\t\t\t    - 3. Credits -", Color::Red, 1);
         GEngine->Print("\t\t\t\t\t\t   - 4. Quit Game -", Color::Red, 1);
     }
+
 }

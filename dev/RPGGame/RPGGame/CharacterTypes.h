@@ -1,19 +1,16 @@
 #pragma once
+#include <iostream>
 #include <vector>
 #include "Abilties.h"
 
 struct CharacterTypes
 {
-
 	std::string Name;
 	std::string Desc;
 	int Health = 0;
 	int ArmorClass = 0;
 	int Stamina = 0;
 	std::vector<CharacterAbility> charAbilties;
-
-
-private:
 };
 
 inline const CharacterTypes Warlock{ "Warlock", "\033[3mBound by a pact with an unknown patron, the Warlock trades safety for devastating dark magic.\033[0m", 

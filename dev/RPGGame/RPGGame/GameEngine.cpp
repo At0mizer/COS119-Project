@@ -1,7 +1,6 @@
 #include "GameEngine.h"
 #include "GameManager.h"
 #include "AActor.h"
-#include "Helper.h"
 
 GameEngine* GEngine = nullptr; // Sets the Global GameEngine pointer to nullptr
 
@@ -61,9 +60,13 @@ void GameEngine::ErrorMessage(std::string message)
 	TypeOut(message, 1ms, 1s, Color::Red, 1);
 }
 
-void GameEngine::ClearLastLine()
+void GameEngine::ClearLastLine(int LineAmt)
 {
-	Print("\x1b[1A\x1b[2K\r", Color::White, 0);
+	for (int i = 0; i < LineAmt; i++)
+	{
+		Print("\x1b[1A\x1b[2K\r", Color::White, 0);
+	}
+
 }
 
 void GameEngine::ClearConsole()

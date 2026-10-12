@@ -13,16 +13,16 @@ void GameSession::StartSession()
 	if (bIsNewGame)
 	{
 		bIsNewGame = false;
-		Helper::Print("New Game Selected!", Helper::Color::Red, 1);
+		GEngine->Print("New Game Selected!", Color::Red, 1);
 
 		std::this_thread::sleep_for(std::chrono::seconds(2));
-		Helper::ClearConsole();
+		GEngine->ClearConsole();
 
 		CreateCharacter();
 	}
 	else
 	{
-		Helper::Print("Player Data Loaded!", Helper::Color::Red, 1);
+		GEngine->Print("Player Data Loaded!", Color::Red, 1);
 	}
 
 	Dialogue::StartDialogue();

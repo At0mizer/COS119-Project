@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <windows.h>
 #include "GameEngine.h"
 
 namespace Input
@@ -8,7 +9,7 @@ namespace Input
 	{
 		while (true)
 		{
-			Helper::Print(message, Helper::Color::White, 0);
+			GEngine->Print(message, Color::White, 0);
 			std::string userChoice;
 			getline(std::cin, userChoice);
 
@@ -16,8 +17,7 @@ namespace Input
 			{
 				GEngine->ErrorMessage("Invalid Option: Your input should only contain one character...");
 
-				GEngine->ClearLastLine();
-				GEngine->ClearLastLine();
+				GEngine->ClearLastLine(2);
 
 				continue;
 			}
@@ -34,17 +34,21 @@ namespace Input
 				{
 					GEngine->ErrorMessage("Invalid Option... Please select one of the options from the options menu.");
 
-					GEngine->ClearLastLine();
-					GEngine->ClearLastLine();
+					GEngine->ClearLastLine(2);
 				}
 			}
 			catch (const std::exception&) // if stoi cannot convert the userChoice, and tells the user to input a valid choice
 			{
 				GEngine->ErrorMessage("Invalid Option... Please select one of the options from the options menu.");
 
-				GEngine->ClearLastLine();
-				GEngine->ClearLastLine();
+				GEngine->ClearLastLine(2);
 			}
 		}
 	}
+
+	inline void FlushInput()
+	{
+		FlushConsoleInputBuffer(GetStdHandle(STD_INPUT_HANDLE));
+	}
+
 }

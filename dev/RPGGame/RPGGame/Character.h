@@ -32,18 +32,9 @@ public:
 		charStats.Exp = _exp;
 	}
 
-	void TakeDamage(int _dmgAmt)
-	{
-		int reduction = static_cast<int>(charStats.ArmorClass / 0.00125);
-		int finalDMG = std::max(0, _dmgAmt - reduction);
-		charStats.Health -= finalDMG;
-	}
+	void TakeDamage(int _dmgAmt);
 
-	void PrintStats() const
-	{
-		GEngine->Print("Name: " + charStats.Name + "| Health: " + std::to_string(charStats.Health), Color::Green, 1);
-
-	}
+	virtual void PrintStats() const;
 
 	std::string Name() const { return charStats.Name; }
 	void Name(std::string _name) { charStats.Name = _name; }
