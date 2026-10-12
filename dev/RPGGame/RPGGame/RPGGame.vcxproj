@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="AActor.cpp" />
     <ClCompile Include="Character.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GameEngine.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameSession.cpp" />
@@ -153,6 +154,7 @@
     <ClInclude Include="CharacterCreator.h" />
     <ClInclude Include="CharacterTypes.h" />
     <ClInclude Include="Dialogue.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameSession.h" />
