@@ -17,11 +17,11 @@ namespace Menus
     // Main Menu 
     static int MainMenu()
     {
-
         bool bIsLooping = true;
 
         while (bIsLooping)
         {
+
             Screens::DisplayWelcomeMessage();
             Screens::MenuOptions();
 

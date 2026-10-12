@@ -1,19 +1,15 @@
 #pragma once
-#include "GObject.h"
+#include "GameEngine.h"
 
-class AActor : public GObject
+class AActor
 {
 public:
-	AActor() {};
-	AActor(std::string InName) {
-		Name = InName;
-	}
-
+	AActor() 
+	{
+	};
 
 	virtual ~AActor() 
 	{}
-
-	virtual void BeginPlay() override;
 
 	virtual void Destroy(); // Deletes the object pointer then assigns it to nullptr
 
