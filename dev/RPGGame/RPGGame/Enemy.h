@@ -5,11 +5,13 @@
 class Enemy : public Character
 {
 public:
+
     Enemy() = default;
 
-    void PushToVector(Enemy& enemy);
+    void PrintStats() const override;
+
 
 private:
-    std::vector<Enemy> enemies;
+
 };
 

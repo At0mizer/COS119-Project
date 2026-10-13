@@ -1,6 +1,7 @@
 #include "Enemy.h"
+#include "CharacterTypes.h"
 
-void Enemy::PushToVector(Enemy& enemy)
+void Enemy::PrintStats() const
 {
-	enemies.push_back(enemy);
+
 }

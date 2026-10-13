@@ -11,7 +11,7 @@ public:
 
 	void StartSession();
 	void SafeZone();
-	void BattleSequence();
+	void BattleMode();
 
 	void CreateCharacter();
 

@@ -17,6 +17,7 @@ namespace UMath
 		return value;
 	}
 
+
 	inline int RandRange(int min, int max)
 	{
 		if (min > max)

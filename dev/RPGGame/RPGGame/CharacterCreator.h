@@ -29,11 +29,14 @@ namespace CharacterCreator
 		GEngine->Print(titlePad + charClass.Name, Color::BMagenta, 1);
 		GEngine->Print(border, Color::BMagenta, 2);
 
-		GEngine->Print("    \033[1mDesc: \033[0m" + charClass.Desc, Color::White, 2);
+		GEngine->Print("    \033[1mDesc: \033[0m" + charClass.Desc, Color::Gray, 2);
 
-		GEngine->Print("    \033[1mHP      : \033[22m" + std::to_string(charClass.Health), Color::Green, 1);
-		GEngine->Print("    \033[1mAC      : \033[22m" + std::to_string(charClass.ArmorClass), Color::Green, 1);
-		GEngine->Print("    \033[1mStamina : \033[22m" + std::to_string(charClass.Stamina), Color::Green, 2);
+		GEngine->Print("    \033[1mHP      : \033[22m" + 
+			std::to_string(charClass.Health), Color::Green, 1);
+		GEngine->Print("    \033[1mAC      : \033[22m" + 
+			std::to_string(charClass.ArmorClass), Color::Green, 1);
+		GEngine->Print("    \033[1mStamina : \033[22m" + 
+			std::to_string(charClass.Stamina), Color::Green, 2);
 
 		GEngine->Print("    \033[1mAbilties: \033[22m", Color::Green, 0);
 
@@ -48,8 +51,8 @@ namespace CharacterCreator
 				"No effect";
 
 			GEngine->Print(ability.Name + ": " + Effect, Color::Green, 0);
-			GEngine->Print("\n\t\t\033[3m" + ability.Desc + "\033[0m", Color::White, 1);
-			GEngine->Print("\t      ", Color::White, 0);
+			GEngine->Print("\n\t\t\033[3m" + ability.Desc + "\033[0m", Color::Gray, 1);
+			GEngine->Print("\t      ", Color::Gray, 0);
 		}
 
 		GEngine->PrintBlankLines(1);
@@ -110,12 +113,13 @@ namespace CharacterCreator
 
 		int ClassSelection = Input::GetInput(">> ", 1, 2);
 
-
 		if (ClassSelection == 1)
 		{
 			GEngine->PrintBlankLines(1);
-			GEngine->TypeOut("[BAP] A Warlock, huh? Making deals with mysterious patrons already?", 30ms, 1s, Color::Cyan, 1);
-			GEngine->TypeOut("[BAP] Bold. I like it!", 30ms, 1s, Color::Cyan, 2);
+			GEngine->TypeOut("[BAP] A Warlock, huh? Making deals with mysterious patrons already?", 
+				30ms, 1s, Color::Cyan, 1);
+			GEngine->TypeOut("[BAP] Bold. I like it!", 
+				30ms, 1s, Color::Cyan, 2);
 
 			const std::string border = "  ##" + std::string(Soldier.Desc.size() + 4, '=') + "##";
 			const std::string titlePad((Warlock.Desc.size() + 8 - Warlock.Name.size()) / 2, ' ');

@@ -33,11 +33,13 @@ public:
 	}
 
 	void TakeDamage(int _dmgAmt);
+	void Attack(Character& character);
 
 	virtual void PrintStats() const;
 
 	std::string Name() const { return charStats.Name; }
 	void Name(std::string _name) { charStats.Name = _name; }
 
+private:
 };
 

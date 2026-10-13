@@ -32,8 +32,8 @@ void Player::PrintStats() const
 			"No effect";
 
 		GEngine->Print(ability.Name + ": " + effect, Color::Green, 0);
-		GEngine->Print("\n\t\t\033[3m" + ability.Desc + "\033[0m", Color::White, 1);
-		GEngine->Print("\t      ", Color::White, 0);
+		GEngine->Print("\n\t\t\033[3m" + ability.Desc + "\033[0m", Color::Gray, 1);
+		GEngine->Print("\t      ", Color::Gray, 0);
 	}
 
 	GEngine->PrintBlankLines(1);

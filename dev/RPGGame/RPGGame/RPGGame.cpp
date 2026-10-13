@@ -10,8 +10,11 @@ int main()
 	_CrtSetBreakAlloc(-1);
 
 	GameEngine engine;
+	GEngine = &engine;
 
 	// Calls the Run() method in the GameEngine.h
 	engine.Run();
 
+	GEngine = nullptr;
+	return 0;
 }

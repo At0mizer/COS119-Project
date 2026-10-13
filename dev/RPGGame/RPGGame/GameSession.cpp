@@ -2,14 +2,15 @@
 #include "GameSession.h"
 #include "GameEngine.h"
 #include "CharacterCreator.h"
+#include "BattleSequence.h"
 #include "Player.h"
 #include "Goblin.h"
+#include "Skeleton.h"
 #include "Dialogue.h"
 
 
 void GameSession::StartSession()
 {
-
 
 	if (bIsNewGame)
 	{
@@ -27,7 +28,7 @@ void GameSession::StartSession()
 	}
 
 	Dialogue::StartDialogue();
-	BattleSequence();
+	BattleMode();
 }
 
 void GameSession::SafeZone()
@@ -35,9 +36,11 @@ void GameSession::SafeZone()
 
 }
 
-void GameSession::BattleSequence()
+void GameSession::BattleMode()
 {
-	Goblin* goblin = new Goblin();
+	BattleSequence battle;
+	battle.CreateEnemies();
+
 
 }
 
