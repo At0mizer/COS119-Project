@@ -33,7 +33,7 @@ public:
 		charStats.Exp = _exp;
 	}
 
-	int RollIntiative();
+	int RollInitiative();
 	void Attack(Character& character);
 	void TakeDamage(int _dmgAmt);
 
@@ -42,6 +42,9 @@ public:
 	std::string Name() const { return charStats.Name; }
 	void Name(std::string _name) { charStats.Name = _name; }
 
+	int Initiative() const { return initiative; }
+
 private:
+	int initiative = 0;
 };
 

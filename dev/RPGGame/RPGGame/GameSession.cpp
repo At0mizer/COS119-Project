@@ -1,4 +1,5 @@
 #include <thread>
+#include "Input.h"
 #include "GameSession.h"
 #include "GameEngine.h"
 #include "CharacterCreator.h"
@@ -16,9 +17,6 @@ void GameSession::StartSession()
 	if (bIsNewGame)
 	{
 		bIsNewGame = false;
-		GEngine->Print("New Game Selected!", Color::Red, 1);
-
-		std::this_thread::sleep_for(std::chrono::seconds(2));
 		GEngine->ClearConsole();
 
 		CreateCharacter(*player);
@@ -41,23 +39,54 @@ void GameSession::CreateCharacter(Player& player)
 	CharacterCreator::CreateCharacter(player);
 }
 
-void GameSession::SafeZone(Player& player)
+void GameSession::SafeZone(Player& player) // This will go in its own class eventually
 {
+	GEngine->TypeOut("Welcome to the safe zone!", 30ms, 1s, Color::Blue, 1);
+	GEngine->TypeOut("Please select an option", 30ms, 1s, Color::Blue, 1);
 
+	int userInput = Input::GetInput("Select a thing", 1, 2);
+	
+	bool bSafeZone = true;
+
+	while (bSafeZone)
+	{
+		switch (userInput)
+		{
+		case 1:
+			bSafeZone = false;
+			break;
+		case 2:
+			bIsLooping = false;
+			bSafeZone = false;
+			break;
+		default:
+			break;
+		}
+	}
 }
 
 void GameSession::BattleMode(Player& player)
 {
 	BattleSequence battle;
 	battle.Battle(player);
+
 }
 
 
 void GameSession::GameLoop(Player& player)
 {
-	SafeZone(player);
-	BattleMode(player);
-	GEngine->ProcessDeferredDestruction();
+	while (bIsLooping)
+	{
+		SafeZone(player);
+
+		if (bIsLooping)
+		{
+			BattleMode(player);
+			GEngine->ProcessDeferredDestruction();
+		}
+
+		GEngine->ProcessDeferredDestruction();
+	}
 }
 
 // Will become its own Namepsace

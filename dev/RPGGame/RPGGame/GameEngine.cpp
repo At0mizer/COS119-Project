@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "GameEngine.h"
 #include "GameManager.h"
 #include "AActor.h"
@@ -43,7 +44,10 @@ void GameEngine::ProcessDeferredDestruction()
 
 void GameEngine::RegisterActor(AActor* actor)
 {
-	ActorRegistry.push_back(actor);
+	if (std::find(ActorRegistry.begin(), ActorRegistry.end(), actor) == ActorRegistry.end())
+	{
+		ActorRegistry.push_back(actor);
+	}
 }
 
 void GameEngine::PrintBlankLines(int numOfBlankLines)

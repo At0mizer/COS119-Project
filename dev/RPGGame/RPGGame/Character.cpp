@@ -8,10 +8,10 @@ void Character::TakeDamage(int _dmgAmt)
 
 
 
-int Character::RollIntiative()
+int Character::RollInitiative()
 {
-	int Initiative = UMath::RandRange(1, 20);
-	return Initiative;
+	initiative = UMath::RandRange(1, 20);
+	return initiative;
 }
 
 void Character::Attack(Character& character)

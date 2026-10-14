@@ -1,9 +1,8 @@
 #pragma once
-#include <iostream>
-#include <string>
-#include <vector>
-#include "Player.h"
-#include "Enemy.h"
+
+class Character;
+class Player;
+class Enemy;
 
 class BattleSequence
 {
@@ -13,13 +12,16 @@ public:
 
 	void CreateEnemies();
 
+	void RollForInitiative(Player& player);
 	void Battle(Player& player);
 
-	void RemoveDeadEnemies();
-
-	const std::vector<Enemy*>& GetEnemyList() const { return EnemyList;  }
+	const std::vector<Enemy*>& EnemyList() const { return enemyList;  }
+	const std::vector<Character*>& TurnOrder() const { return turnOrder; }
 
 private:
-	std::vector<Enemy*> EnemyList;
+	std::vector<Enemy*> enemyList;
+	std::vector<Character*> turnOrder;
+
+	bool bIsLooping = true;
 };
 
