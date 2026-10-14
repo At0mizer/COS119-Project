@@ -24,7 +24,7 @@ void BattleSequence::Battle(Player& player)
 
 	for (auto enemy : EnemyList)
 	{
-		GEngine->Print("Name: " + enemy->charStats.Name + "| Initiative" + std::to_string(enemy->RollIntiative()), Color::Blue, 1);
+		GEngine->Print("Name: " + enemy->charStats.Name + " | Initiative: " + std::to_string(enemy->RollIntiative()), Color::Blue, 1);
 	}
 
 	system("pause");
