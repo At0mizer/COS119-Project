@@ -11,6 +11,7 @@
 
 void GameSession::StartSession()
 {
+	Player* player = new Player();
 
 	if (bIsNewGame)
 	{
@@ -20,7 +21,7 @@ void GameSession::StartSession()
 		std::this_thread::sleep_for(std::chrono::seconds(2));
 		GEngine->ClearConsole();
 
-		CreateCharacter();
+		CreateCharacter(*player);
 	}
 	else
 	{
@@ -28,31 +29,36 @@ void GameSession::StartSession()
 	}
 
 	Dialogue::StartDialogue();
-	BattleMode();
+	GameLoop(*player);
 }
 
-void GameSession::SafeZone()
+void GameSession::CreateCharacter(Player& player)
 {
 
-}
-
-void GameSession::BattleMode()
-{
-	BattleSequence battle;
-	battle.CreateEnemies();
-
-
-}
-
-
-void GameSession::CreateCharacter()
-{
-	Player* player = new Player();
-	Engine.RegisterActor(player); // Registers the actor to the vector so it will be added to the destruction list
+	Engine.RegisterActor(&player); // Registers the actor to the vector so it will be added to the destruction list
 
 	// Calls the CreateCharacter method from the CharacterCreator namespace
-	CharacterCreator::CreateCharacter(*player);
- }
+	CharacterCreator::CreateCharacter(player);
+}
+
+void GameSession::SafeZone(Player& player)
+{
+
+}
+
+void GameSession::BattleMode(Player& player)
+{
+	BattleSequence battle;
+	battle.Battle(player);
+}
+
+
+void GameSession::GameLoop(Player& player)
+{
+	SafeZone(player);
+	BattleMode(player);
+	GEngine->ProcessDeferredDestruction();
+}
 
 // Will become its own Namepsace
 void GameSession::SaveGame()

@@ -1,8 +1,9 @@
 #pragma once
-#include "AActor.h"
 #include <iostream>
 #include <string>
 #include <vector>
+#include "AActor.h"
+#include "UMath.h"
 
 struct CharacterStats
 {
@@ -32,8 +33,9 @@ public:
 		charStats.Exp = _exp;
 	}
 
-	void TakeDamage(int _dmgAmt);
+	int RollIntiative();
 	void Attack(Character& character);
+	void TakeDamage(int _dmgAmt);
 
 	virtual void PrintStats() const;
 

@@ -13,7 +13,10 @@ class Player : public Character
 public:
 	CharacterAbilities charAbilities;
 
-	Player() {};
+	Player() 
+	{
+		GEngine->RegisterActor(this);
+	};
 
 	void PrintStats() const override;
 

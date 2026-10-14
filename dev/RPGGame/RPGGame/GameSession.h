@@ -1,6 +1,7 @@
 #pragma once
 
 class GameEngine;
+class Player;
 
 class GameSession
 {
@@ -10,10 +11,12 @@ public:
 	{}
 
 	void StartSession();
-	void SafeZone();
-	void BattleMode();
+	void SafeZone(Player& player);
+	void BattleMode(Player& player);
 
-	void CreateCharacter();
+	void CreateCharacter(Player& player);
+
+	void GameLoop(Player& player);
 
 	bool GetIsNewGame() const { return bIsNewGame; }
 	void SetIsNewGame() { bIsNewGame = true; }

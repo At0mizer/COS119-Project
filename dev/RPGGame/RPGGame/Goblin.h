@@ -14,6 +14,8 @@ public:
 		charStats.Stamina = UMath::RandRange(11, 15);
 		charStats.Exp = UMath::RandRange(10, 15);
 
+		RollIntiative();
+
 		GEngine->RegisterActor(this);
 	}
 };
