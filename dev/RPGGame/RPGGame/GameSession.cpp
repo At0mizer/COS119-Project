@@ -4,11 +4,11 @@
 #include "GameEngine.h"
 #include "CharacterCreator.h"
 #include "BattleSequence.h"
+#include "Town.h"
 #include "Player.h"
 #include "Goblin.h"
 #include "Skeleton.h"
 #include "Dialogue.h"
-
 
 void GameSession::StartSession()
 {
@@ -26,14 +26,13 @@ void GameSession::StartSession()
 		GEngine->Print("Player Data Loaded!", Color::Red, 1);
 	}
 
-	Dialogue::StartDialogue();
 	GameLoop(*player);
 }
 
 void GameSession::CreateCharacter(Player& player)
 {
 
-	Engine.RegisterActor(&player); // Registers the actor to the vector so it will be added to the destruction list
+	GEngine->RegisterActor(&player); // Registers the actor to the vector so it will be added to the destruction list
 
 	// Calls the CreateCharacter method from the CharacterCreator namespace
 	CharacterCreator::CreateCharacter(player);
@@ -41,28 +40,9 @@ void GameSession::CreateCharacter(Player& player)
 
 void GameSession::SafeZone(Player& player) // This will go in its own class eventually
 {
-	GEngine->TypeOut("Welcome to the safe zone!", 30ms, 1s, Color::Blue, 1);
-	GEngine->TypeOut("Please select an option", 30ms, 1s, Color::Blue, 1);
+	Town town;
+	town.TownArea();
 
-	int userInput = Input::GetInput("Select a thing", 1, 2);
-	
-	bool bSafeZone = true;
-
-	while (bSafeZone)
-	{
-		switch (userInput)
-		{
-		case 1:
-			bSafeZone = false;
-			break;
-		case 2:
-			bIsLooping = false;
-			bSafeZone = false;
-			break;
-		default:
-			break;
-		}
-	}
 }
 
 void GameSession::BattleMode(Player& player)

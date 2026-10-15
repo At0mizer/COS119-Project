@@ -67,6 +67,18 @@
     <Filter Include="Source Files\GObject\AActor\Inventory">
       <UniqueIdentifier>{a09e19cc-48ac-4481-8fd2-7699804a756d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\GObject\AActor\Characters\Enemy">
+      <UniqueIdentifier>{08e71c07-90d0-4310-8c3c-bdee83759ee7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GObject\AActor\Characters\Player">
+      <UniqueIdentifier>{602121ba-65f9-464f-8eae-c54c9de00f0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GObject\AActor\Characters\Enemy">
+      <UniqueIdentifier>{3e138421-a4c2-43b9-920e-a4d0ee5f3414}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GObject\AActor\Characters\Player">
+      <UniqueIdentifier>{da39f4f5-cb6d-4d1b-9cf4-e6ec72fb6e86}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameEngine.cpp">
@@ -87,25 +99,31 @@
     <ClCompile Include="Character.cpp">
       <Filter>Source Files\GObject\AActor\Characters</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files\GObject\AActor\Characters</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Source Files\GObject\AActor\Characters</Filter>
-    </ClCompile>
     <ClCompile Include="Inventory.cpp">
       <Filter>Source Files\GObject\AActor\Inventory</Filter>
     </ClCompile>
     <ClCompile Include="Item.cpp">
       <Filter>Source Files\GObject\AActor\Inventory</Filter>
     </ClCompile>
-    <ClCompile Include="Goblin.cpp">
+    <ClCompile Include="BattleSequence.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files\GObject\AActor\Characters\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="Skeleton.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\GObject\AActor\Characters\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="BattleSequence.cpp">
+    <ClCompile Include="Goblin.cpp">
+      <Filter>Source Files\GObject\AActor\Characters\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Kobald.cpp">
+      <Filter>Source Files\GObject\AActor\Characters\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\GObject\AActor\Characters\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Town.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -152,25 +170,31 @@
     <ClInclude Include="Character.h">
       <Filter>Header Files\GObject\AActor\Characters</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Header Files\GObject\AActor\Characters</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Header Files\GObject\AActor\Characters</Filter>
-    </ClInclude>
     <ClInclude Include="Inventory.h">
       <Filter>Header Files\GObject\AActor\Inventory</Filter>
     </ClInclude>
     <ClInclude Include="Item.h">
       <Filter>Header Files\GObject\AActor\Inventory</Filter>
     </ClInclude>
-    <ClInclude Include="Goblin.h">
+    <ClInclude Include="BattleSequence.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Header Files\GObject\AActor\Characters\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Goblin.h">
+      <Filter>Header Files\GObject\AActor\Characters\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="Skeleton.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\GObject\AActor\Characters\Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="BattleSequence.h">
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\GObject\AActor\Characters\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Kobald.h">
+      <Filter>Header Files\GObject\AActor\Characters\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Town.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -76,8 +76,8 @@ public:
 	void RequesetQuit() { bIsRunning = false; }
 
 	void PrintBlankLines(int numOfBlankLines);
-	template <typename T> void Print(const T& message, Color color, int numOfBlankLines);
-	template <typename T> void TypeOut(const T& message, std::chrono::milliseconds delayMs, std::chrono::seconds delayLine, Color color, int BlankLines);
+	template <typename T> void Print(const T& message, Color color = Color::White, int numOfBlankLines = 0);
+	template <typename T> void TypeOut(const T& message, std::chrono::milliseconds delayMs, std::chrono::milliseconds, Color color = Color::White, int BlankLines = 0);
 	void ErrorMessage(std::string message);
 	void ClearLastLine(int LineAmt);
 
@@ -138,7 +138,7 @@ inline void GameEngine::Print(const T& message, Color color, int numOfBlankLines
 }
 
 template<typename T>
-inline void GameEngine::TypeOut(const T& message, std::chrono::milliseconds delayMs, std::chrono::seconds delayLine, Color color, int BlankLines)
+inline void GameEngine::TypeOut(const T& message, std::chrono::milliseconds delayMs, std::chrono::milliseconds delayLine, Color color, int BlankLines)
 {
 	bool skip = false;
 

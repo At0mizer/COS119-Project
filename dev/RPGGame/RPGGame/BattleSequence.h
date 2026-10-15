@@ -11,8 +11,10 @@ public:
 	~BattleSequence();
 
 	void CreateEnemies();
+	void RemoveEnemies();
 
 	void RollForInitiative(Player& player);
+	void SelectEnemies();
 	void Battle(Player& player);
 
 	const std::vector<Enemy*>& EnemyList() const { return enemyList;  }
@@ -20,6 +22,7 @@ public:
 
 private:
 	std::vector<Enemy*> enemyList;
+	std::vector<Enemy*> enemyBattleList;
 	std::vector<Character*> turnOrder;
 
 	bool bIsLooping = true;

@@ -149,8 +149,10 @@
     <ClCompile Include="Goblin.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Kobald.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RPGGame.cpp" />
+    <ClCompile Include="Town.cpp" />
     <ClCompile Include="Skeleton.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -168,8 +170,10 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="Kobald.h" />
     <ClInclude Include="Menus.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Town.h" />
     <ClInclude Include="SaveSystem.h" />
     <ClInclude Include="Screens.h" />
     <ClInclude Include="Abilties.h" />

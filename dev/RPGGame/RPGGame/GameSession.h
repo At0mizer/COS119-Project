@@ -1,13 +1,12 @@
 #pragma once
 
-class GameEngine;
 class Player;
 
 class GameSession
 {
 public:
-	GameSession(GameEngine& _engine)
-		: Engine(_engine)
+
+	GameSession() 
 	{}
 
 	void StartSession();
@@ -21,10 +20,11 @@ public:
 	bool GetIsNewGame() const { return bIsNewGame; }
 	void SetIsNewGame() { bIsNewGame = true; }
 
+	void RequestSessionEnd() { bIsLooping = false; }
+
 	void SaveGame();
 
 private:
-	GameEngine& Engine;
 
 	bool bIsNewGame = false;
 	bool bIsLooping = true;

@@ -20,7 +20,7 @@ void GameEngine::Run()
 {
 	bIsRunning = true;
 
-	GameManager manager(*this);
+	GameManager manager;
 
 	manager.MainMenu();
 }
