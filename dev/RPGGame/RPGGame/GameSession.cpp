@@ -40,7 +40,7 @@ void GameSession::CreateCharacter(Player& player)
 
 void GameSession::SafeZone(Player& player) // This will go in its own class eventually
 {
-	Town town;
+	Town town(*this, player);
 	town.TownArea();
 
 }

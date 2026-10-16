@@ -6,6 +6,7 @@ struct CharacterStats
 	std::string Name = "";
 	std::string ClassName = "";
 	int Health = 0;
+	int Attack = 0;
 	int ArmorClass = 0;
 	int Stamina = 0;
 	int Exp = 0;
@@ -19,11 +20,12 @@ public:
 
 	Character() = default;
 
-	Character(std::string _name, std::string _classname, int _health, int _armorClass, int _stamina, int _exp)
+	Character(std::string _name, std::string _classname, int _health, int _attack, int _armorClass, int _stamina, int _exp)
 	{
 		charStats.Name = _name;
 		charStats.ClassName = _classname;
 		charStats.Health = _health;
+		charStats.Attack = _attack;
 		charStats.ArmorClass = _armorClass;
 		charStats.Stamina = _stamina;
 		charStats.Exp = _exp;

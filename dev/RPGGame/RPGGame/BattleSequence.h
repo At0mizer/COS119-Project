@@ -11,7 +11,6 @@ public:
 	~BattleSequence();
 
 	void CreateEnemies();
-	void RemoveEnemies();
 
 	void RollForInitiative(Player& player);
 	void SelectEnemies();
@@ -21,6 +20,13 @@ public:
 	const std::vector<Character*>& TurnOrder() const { return turnOrder; }
 
 private:
+	void RunCombat(Player& player);
+	void PlayerTurn(Player& player, const std::vector<Character*>& enemies);
+	void EnemyTurn(Character* enemy, Player& player);
+	void Attack(Character* attacker, Character* target, int damage);
+	bool IsAlive(const Character* character) const;
+	bool AnyAlive(const std::vector<Character*>& characters) const;
+
 	std::vector<Enemy*> enemyList;
 	std::vector<Enemy*> enemyBattleList;
 	std::vector<Character*> turnOrder;
